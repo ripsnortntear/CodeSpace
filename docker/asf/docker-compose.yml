@@ -1,0 +1,14 @@
+---
+services:
+  archisteamfarm:
+    image: justarchi/archisteamfarm:latest
+    container_name: asf
+    restart: always
+    environment:
+      - ASF_CONFIG_PATH=/app/config
+      - ASF_LOG_LEVEL=Info
+    volumes:
+      - ./config:/app/config
+      - ./logs:/app/logs
+    ports:
+      - 1242:1242
