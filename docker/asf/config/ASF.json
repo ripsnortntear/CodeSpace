@@ -2,6 +2,6 @@
   "DefaultBot": "**************",
   "Headless": true,
   "IPCPassword": "***********",
-  "SteamOwnerID": **************,
+  "SteamOwnerID": "**************",
   "SteamTokenDumperPluginEnabled": true
 }
