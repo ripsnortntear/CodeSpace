@@ -1,0 +1,20 @@
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre:latest
+    container_name: calibre
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PASSWORD= ''
+    # - CLI_ARGS= #optional
+      - CUSTOM_PORT=5000
+    volumes:
+      - ./config:/config
+    ports:
+      - 5000:5000
+      - 8181:8181
+      - 8081:8081
+    restart: unless-stopped
