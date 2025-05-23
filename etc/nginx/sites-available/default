@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    server_name localhost;
+
+    # Root directory for the default page
+    root /var/www/html;
+
+    # Default index file
+    index index.html index.htm;
+
+    location / {
+        # Serve the default welcome page
+        try_files $uri $uri/ =404;
+    }
+
+    # Optional: Additional location blocks for specific needs
+    # location /api {
+    #     proxy_pass http://localhost:3000;
+    # }
+}
