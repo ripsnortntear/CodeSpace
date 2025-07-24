@@ -46,7 +46,7 @@ services:
       - UMASK=022
     volumes:
       - ./config:/config
-      - /mnt/storage/downloads:/downloads
+      - ./downloads:/downloads
     network_mode: service:gluetun
     depends_on:
       gluetun:
@@ -54,19 +54,4 @@ services:
     security_opt:
       - no-new-privileges:true
     restart: unless-stopped
-
-#  pms-docker:
-#    container_name: plex
-#    network_mode: service:gluetun
-#    environment:
-#      - TZ=America/New_York
-#      - PLEX_CLAIM=claim-nDn9-vbpvPsGfnJw3ndN
-#    volumes:
-#      - ./config:/config
-#      - ./transcode:/transcode
-#      - /mnt/storage/media:/data
-#    image: plexinc/pms-docker
-#    depends_on:
-#      gluetun:
-#        condition: service_healthy
-#    restart: unless-stopped
+  
